@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose');
-const note = require('./models/NoteModel');
+const note = require('./src/models/NoteModel.js');
 
 const bodyParser = require('body-parser');
 
@@ -14,7 +14,7 @@ mongoose.connect("mongodb+srv://shaw98:RXdShWoTntiETvLr@cluster0.xhyramc.mongodb
         res.json({message : "API works"});
     });
 
-    const noteRouter = require("./routes/NoteRoutes");
+    const noteRouter = require("./src/routes/NoteRoutes.js");
     app.use("/notes", noteRouter);
 });
 
